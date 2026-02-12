@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -18,14 +20,20 @@ export default function RootLayout({
     return (
         <html lang="id" className="dark" suppressHydrationWarning>
             <body className={`${inter.className} antialiased`}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="dark"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    {children}
-                </ThemeProvider>
+                <div className="min-h-screen flex flex-col bg-background-dark">
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="dark"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <Navigation />
+                        <main className="flex-grow">
+                            {children}
+                        </main>
+                        <Footer />
+                    </ThemeProvider>
+                </div>
             </body>
         </html>
     );

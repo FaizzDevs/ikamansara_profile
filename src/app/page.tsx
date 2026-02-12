@@ -10,14 +10,12 @@ import { TestimonialSection } from "@/components/testimonial-section";
 export default function Home() {
     return (
         <main className="min-h-screen">
-            <Navigation />
             <HeroSection />
             <StatsSection />
             <AboutSection />
             <NewsSection />
             <TestimonialSection />
             <CTASection />
-            <Footer />
         </main>
     )
 }
