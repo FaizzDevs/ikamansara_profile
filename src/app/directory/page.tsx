@@ -5,6 +5,9 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { DirectoryHeader } from "./components/directory-header"
 import { DirectorySearch } from "./components/directory-search"
+import { DirectoryFilters } from "./components/directory-filters"
+import { AlumniGrid } from "./components/alumni-grid"
+import { Pagination } from "./components/pagination"
 
 export default function PageDirectory() {
     const [searchQuery, setSearchQuery] = useState("")
@@ -44,10 +47,35 @@ export default function PageDirectory() {
 
             <motion.div
                 className="mb-10 space-y-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
             >
                 <DirectorySearch onSearch={setSearchQuery} />
-                Ini Directory Filters
+                <DirectoryFilters onFilterChange={setFilters} />
             </motion.div>
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+            >
+                <AlumniGrid alumni={paginatedAlumni} />
+            </motion.div>
+
+            {totalPages > 1 && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.3}}
+                >
+                    <Pagination 
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        onPageChange={setCurrentPage}
+                    />
+                </motion.div>
+            )}
         </main>
     )
 }
