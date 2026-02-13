@@ -21,8 +21,8 @@ export function AlumniGrid({ alumni }: AlumniGridProps) {
 
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {alumni.map((alumnus, index) => (
-                <AlumniCard key={alumnus.id} alumni={alumnus} index={index} />
+            {alumni.map((alumnus) => (
+                <AlumniCard key={alumnus.id} alumni={alumnus} />
             ))}
         </section>
     )

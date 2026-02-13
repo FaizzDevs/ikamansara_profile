@@ -12,10 +12,9 @@ import Link from "next/link"
 
 interface AlumniCardProps {
     alumni: Alumni
-    index: number
 }
 
-export function AlumniCard({ alumni, index }: AlumniCardProps) {
+export function AlumniCard({ alumni }: AlumniCardProps) {
     const [isHovered, setIsHovered] = useState(false)
 
     return (

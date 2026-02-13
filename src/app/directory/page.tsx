@@ -17,7 +17,7 @@ export default function PageDirectory() {
         city: ""
     })
     const [currentPage, setCurrentPage] = useState(1)
-    const itemsPerPage = 8
+    const itemsPerPage = 9
 
     const filteredAlumni = alumniData.filter((alumni) => {
         const matchesSearch = alumni.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
