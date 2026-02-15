@@ -5,6 +5,8 @@ import { useState } from "react"
 import FeaturedEvent from "./components/featured-event"
 import { motion } from "framer-motion"
 import { EventCard } from "./components/event-card"
+import { EventFilters } from "./components/event-filters"
+import { MemoryLane } from "./components/memory-lane"
 
 export default function EventsPage() {
     const [selectedCategory, setSelectedCategory] = useState("All Events")
@@ -30,7 +32,11 @@ export default function EventsPage() {
 
             <section className="space-y-6">
                 <motion.div>
-                    Event Filters
+                    <EventFilters 
+                        selectedCategory={selectedCategory}
+                        onCategoryChange={setSelectedCategory}
+                        onSearch={setSearchQuery}
+                    />
                 </motion.div>
 
                 <motion.div
@@ -44,6 +50,12 @@ export default function EventsPage() {
                     ))}
                 </motion.div>
             </section>
+
+            <motion.div>
+                    <div>
+                        <MemoryLane />
+                    </div>
+            </motion.div>
         </main>
     )
 }

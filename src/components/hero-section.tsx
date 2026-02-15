@@ -30,9 +30,9 @@ export function HeroSection() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.1] mb-8 tracking-tight"
                 >
-                    Menyambung Silaturahmi, <br />
+                    SELAMAT DAN SUKSES, <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">
-                        Membangun Negeri
+                        Atas Pelantikan Kepengurusan IKA MAN 1 Jepara
                     </span>
                 </motion.h1>
 
